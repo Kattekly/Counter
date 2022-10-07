@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import "./App.css";
+import Button from "./Components/Button";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const maxValue = 5
+    const maxStart = 0
+    const step = 1
+
+    const [counter, setCounter] = useState(maxStart)
+
+    const handleClick1 = () => {
+        if (counter < maxValue) {
+            setCounter(counter + step)
+        }
+    }
+
+    const handleClick2 = () => {
+        setCounter(maxStart)
+    }
+
+    return (
+        <div className="counter"> Counter
+            <div>{counter}</div>
+            <div>
+                <Button title={"Increment"} disable={counter === maxValue} callback={handleClick1}/>
+                <Button title={"Reset"} disable={counter === maxStart} callback={handleClick2}/>
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App
+
