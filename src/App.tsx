@@ -1,46 +1,45 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./App.css";
 import Button from "./Components/Button";
 import {Counter} from "./Components/Counter";
 import {Settings} from "./Components/Settings";
 
+const STEP = 1
+
 const App = () => {
-    const maxValue = 5
-    const maxStart = 0
-    const step = 1
 
-    const [counter, setCounter] = useState(maxStart)
+    const [startValue, setStartValue] = useState<number>(0)
+    const [maxValue, setMaxValue] = useState<number>(1)
 
-    const setMax =  (counter === maxValue)
+    const [counter, setCounter] = useState(startValue)
 
-    const setStart = (counter === maxStart)
 
-    const handleClick1 = () => {
+    const isMax = (counter === maxValue)
+    const isStart = (counter === startValue)
+
+    const handleIncrementClick = () => {
         if (counter < maxValue) {
-            setCounter(counter + step)
+            setCounter(counter + STEP)
         }
     }
 
     const handleClick2 = () => {
-        setCounter(maxStart)
+            setCounter(startValue)
     }
 
-    const localSettings = () => {
-        alert("Yo")
-    }
 
     return (
         <div className="counter"> Counter
-            <div><Counter counter={counter} maxValue={maxValue} /></div>
+            <div><Counter counter={counter} maxValue={maxValue}/></div>
             <div>
-                <Button title={"Increment"} disable={setMax} callback={handleClick1}/>
-                <Button title={"Reset"} disable={setStart} callback={handleClick2}/>
+                <Button title={"Increment"} disable={isMax} callback={handleIncrementClick}/>
+                <Button title={"Reset"} disable={isStart} callback={handleClick2}/>
             </div>
             <div>
-                <Settings maxValue={maxValue} maxStart={maxStart}/>
+                <Settings maxValue={maxValue}  startValue={startValue} setMaxValue={setMaxValue} setStartValue={setStartValue}/>
             </div>
-            <div>
-                <Button title={"Set"} callback={localSettings} disable={counter === maxValue}/>
+             <div>
+                <Button title={"Set"} callback={handleClick2} disable={counter === maxValue}/>
             </div>
         </div>
     )
