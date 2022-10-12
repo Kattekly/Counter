@@ -9,9 +9,8 @@ type buttonType = {
 const Button = (props: buttonType) => {
     return (
         <button className={props.title === "Increment" ? "button1" : "button2"}
-                disabled={props.disable} onClick={props.callback}>{props.title}
-        </button>
-
+                disabled={props.disable}
+                onClick={props.callback}>{props.title}</button>
     );
 };
 

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./App.css";
 import Button from "./Components/Button";
+import {Counter} from "./Components/Counter";
 
 const App = () => {
     const maxValue = 5
@@ -21,7 +22,7 @@ const App = () => {
 
     return (
         <div className="counter"> Counter
-            <div>{counter}</div>
+            <div><Counter counter={counter} /></div>
             <div>
                 <Button title={"Increment"} disable={counter === maxValue} callback={handleClick1}/>
                 <Button title={"Reset"} disable={counter === maxStart} callback={handleClick2}/>
