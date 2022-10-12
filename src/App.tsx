@@ -22,7 +22,7 @@ const App = () => {
 
     return (
         <div className="counter"> Counter
-            <div><Counter counter={counter} /></div>
+            <div><Counter counter={counter} maxValue={maxValue} /></div>
             <div>
                 <Button title={"Increment"} disable={counter === maxValue} callback={handleClick1}/>
                 <Button title={"Reset"} disable={counter === maxStart} callback={handleClick2}/>

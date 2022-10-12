@@ -2,11 +2,12 @@ import React from 'react';
 
 type CounterType = {
     counter: number
+    maxValue: number
 }
 
 export const Counter = (props: CounterType) => {
     return (
-        <div>
+        <div className={props.counter === props.maxValue ? "maxValue" : ""}>
             {props.counter}
         </div>
     );

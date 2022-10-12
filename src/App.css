@@ -24,3 +24,8 @@ text-align: center;
     margin-right: 3px;
     border: none;
 }
+
+.maxValue {
+    color: red;
+    font-weight: bold;
+}
