@@ -7,30 +7,46 @@ import {Settings} from "./Components/Settings";
 const STEP = 1
 
 const App = () => {
-
+    const [counter, setCounter] = useState<number>(0)
     const [startValue, setStartValue] = useState<number>(0)
-    const [maxValue, setMaxValue] = useState<number>(1)
-    const [counter, setCounter] = useState(startValue)
+    const [maxValue, setMaxValue] = useState<number>(5)
+
+    const [isError, setIsError] = useState(false)
+    const [set, setSet] = useState(true)
 
 
-    const isMax = (counter === maxValue)
-    const isStart = (counter === startValue)
+    const isDisabledReset = (counter <= startValue)
+    const isDisabledInc = (counter === maxValue)
 
-    const handleIncrementClick = () => {
-        if (counter < maxValue) {
+    const handlerIncrementClick = () => {
             setCounter(counter + STEP)
-        }
     }
 
-    const handleClick2 = () => {
-            setCounter(startValue)
+    const handlerResetClick = () => {
+        setCounter(startValue)
     }
 
 
     return (
-        <div className="counter"> Counter
-            <div><Counter counter={counter} maxValue={maxValue}/></div>
-            <div>
+        <div className="counter">
+            <Counter counter={counter}
+                     maxValue={maxValue}
+                     startValue={startValue}
+                     isError={isError}
+                     set={set}
+                     handlerIncrementClick={handlerIncrementClick}
+                     handlerResetClick={handlerResetClick}
+                     isDisabledReset={isDisabledReset}
+                     isDisabledInc={isDisabledInc}
+            />
+
+        </div>
+    )
+}
+
+export default App
+
+{/* <div>
                 <Button title={"Increment"} disable={isMax} callback={handleIncrementClick}/>
                 <Button title={"Reset"} disable={isStart} callback={handleClick2}/>
             </div>
@@ -39,10 +55,5 @@ const App = () => {
             </div>
              <div>
                 <Button title={"Set"} callback={handleClick2} disable={counter === maxValue}/>
-            </div>
-        </div>
-    )
+            </div>*/
 }
-
-export default App
-
