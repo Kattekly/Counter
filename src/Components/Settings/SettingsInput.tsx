@@ -1,4 +1,5 @@
 import React, {ChangeEvent} from 'react';
+import './Settings.css'
 
 type InputNumberPropsType = {
     error: boolean
@@ -15,7 +16,7 @@ const SettingsInputNumber = (props: InputNumberPropsType) => {
 
 
     return (
-        <div className='settings-input'>
+        <div className="settingsInput">
             <h4>{props.title}:</h4>
             <input className={props.error ? 'red' : ''} type="number" value={props.value} onChange={callbackHandler} />
         </div>

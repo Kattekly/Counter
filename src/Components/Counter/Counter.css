@@ -1,4 +1,4 @@
-.counter-wrapper {
+.counterWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,12 +55,12 @@ h4 {
 }
 
 .error{
-    color: red;
-    background-color: #282c34;
+    color:  #d70a0a;
+    background-color: #464b4f;
     font-size: 30px;
 }
 
-.buttons-wrapper{
+.buttonsWrapper{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -89,5 +89,6 @@ button:disabled{
 }
 
 .red {
-    color: #ff0000
+    color: #d70a0a;
+    font-size: 60px
 }

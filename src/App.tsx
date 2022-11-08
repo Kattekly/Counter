@@ -21,9 +21,9 @@ function saveValuesCounter(key: string, value: number){
 }
 
 const App = () => {
-    const [counter, setCounter] = useState<number>(0)
-    const [startValue, setStartValue] = useState<number>(0)
-    const [maxValue, setMaxValue] = useState<number>(5)
+    const [counter, setCounter] = useState<number>(START_SETTINGS_VALUE)
+    const [startValue, setStartValue] = useState<number>(START_SETTINGS_VALUE)
+    const [maxValue, setMaxValue] = useState<number>(MAX_SETTINGS_VALUE)
 
     const [isError, setIsError] = useState(false)
     const [set, setSet] = useState(true)
@@ -65,7 +65,7 @@ const App = () => {
 
     return (
         <div className="App">
-            <div className="counter-wrapper">
+            <div className="counterWrapper">
         <div className="counter">
             <Counter counter={counter}
                      maxValue={maxValue}

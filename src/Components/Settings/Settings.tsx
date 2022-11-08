@@ -1,6 +1,7 @@
 import React, {} from 'react';
 import Button from "../Button";
 import SettingsInputNumber from "./SettingsInput";
+import './Settings.css'
 
 type SettingsType = {
     maxValue: number
@@ -27,12 +28,12 @@ export const Settings = (props: SettingsType) => {
 
     return (
         <>
-            <div className='input-wrapper'>
-                <SettingsInputNumber error={props.isError} title={String(props.maxValue)} value={props.maxValue} callback={maxValueHandler}/>
-                <SettingsInputNumber error={props.isError} title={String(props.startValue)} value={props.startValue} callback={startValueHandler}/>
+            <div className="inputWrapper">
+                <SettingsInputNumber error={props.isError} title="Max value" value={props.maxValue} callback={maxValueHandler} />
+                <SettingsInputNumber error={props.isError} title="Start value" value={props.startValue} callback={startValueHandler}/>
             </div>
-            <div className='set'>
-                <Button title='set' callback={setValuesHandler} disable={props.isError}/>
+            <div className="set">
+                <Button title='Set' callback={setValuesHandler} disable={props.isError}/>
             </div>
         </>
     );
