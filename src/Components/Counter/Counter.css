@@ -13,14 +13,14 @@
 }
 
 .settings{
-    border: 2px solid #00eaff;
+    border: 2px solid #282c34;
     border-radius: 5px;
     width: 300px;
     height: 200px;
 }
 
 .buttons {
-    border: 2px solid #00eaff;
+    border: 2px solid #282c34;
     border-radius: 5px;
     width: 300px;
     height: 200px;
@@ -33,8 +33,8 @@ h2 {
     margin: 10px 10px;
     height: 100px;
     font-size: 44px;
-    background-color: #00eaff;
-    color: #282c34;
+    background-color: #282c34;
+    color: white;
     border-radius: 5px;
 }
 
@@ -45,8 +45,8 @@ h4 {
     margin: 10px 10px;
     font-size: 20px;
     width: 40%;
-    background-color: #00eaff;
-    color: #282c34;
+    background-color: #282c34;
+    color: white;
     border-radius: 5px;
 }
 
@@ -56,7 +56,7 @@ h4 {
 
 .error{
     color:  #d70a0a;
-    background-color: #464b4f;
+    background-color: #282c34;
     font-size: 30px;
 }
 
@@ -64,7 +64,7 @@ h4 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid #00eaff;
+    border: 2px solid #282c34;
     border-radius: 5px;
     margin: 10px 10px;
     height: 32%;
@@ -73,15 +73,15 @@ h4 {
 button{
     font-size: 44px;
     border: none;
-    background-color: #00eaff;
-    color: #282c34;
+    background-color: #282c34;
+    color: white;
     border-radius: 15px;
     height: 50px;
 }
 
 button:active{
     background-color:#282c34;
-    color:  #00eaff;
+    color:  #f56217;
 }
 
 button:disabled{

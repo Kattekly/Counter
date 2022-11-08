@@ -92,15 +92,3 @@ const App = () => {
 }
 
 export default App
-
-{/* <div>
-                <Button title={"Increment"} disable={isMax} callback={handleIncrementClick}/>
-                <Button title={"Reset"} disable={isStart} callback={handleClick2}/>
-            </div>
-            <div>
-                <Settings maxValue={maxValue}  startValue={startValue} setMaxValue={setMaxValue} setStartValue={setStartValue}/>
-            </div>
-             <div>
-                <Button title={"Set"} callback={handleClick2} disable={counter === maxValue}/>
-            </div>*/
-}
