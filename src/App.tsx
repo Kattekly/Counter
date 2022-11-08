@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import "./App.css";
-import Button from "./Components/Button";
-import {Counter} from "./Components/Counter";
-import {Settings} from "./Components/Settings";
+import {Counter} from "./Components/Counter/Counter";
+import {Settings} from "./Components/Settings/Settings";
 
 const STEP = 1
 export const START_SETTINGS_VALUE = getValueLocalStorage('START_VALUE', 0)
 export const MAX_SETTINGS_VALUE = getValueLocalStorage('MAX_VALUE', 5)
+
 
 function getValueLocalStorage(key:string, defaultValue:number){
     let value = defaultValue
@@ -64,6 +64,8 @@ const App = () => {
 
 
     return (
+        <div className="App">
+            <div className="counter-wrapper">
         <div className="counter">
             <Counter counter={counter}
                      maxValue={maxValue}
@@ -73,14 +75,18 @@ const App = () => {
                      handlerIncrementClick={handlerIncrementClick}
                      handlerResetClick={handlerResetClick}
                      isDisabledReset={isDisabledReset}
-                     isDisabledInc={isDisabledInc}
-            />
+                     isDisabledInc={isDisabledInc}/>
+        </div>
+            <div className='settings'>
             <Settings maxValue={maxValue}
                       startValue={startValue}
                       isError={isError}
                       startValueCallback={startValueCallback}
                       maxValueCallback={maxValueCallback}
                       setValuesCallback={setValuesCallback}/>
+
+        </div>
+        </div>
         </div>
     )
 }

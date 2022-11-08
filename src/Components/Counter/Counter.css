@@ -1,0 +1,93 @@
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.counter{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.settings{
+    border: 2px solid #00eaff;
+    border-radius: 5px;
+    width: 300px;
+    height: 200px;
+}
+
+.buttons {
+    border: 2px solid #00eaff;
+    border-radius: 5px;
+    width: 300px;
+    height: 200px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px;
+    height: 100px;
+    font-size: 44px;
+    background-color: #00eaff;
+    color: #282c34;
+    border-radius: 5px;
+}
+
+h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px;
+    font-size: 20px;
+    width: 40%;
+    background-color: #00eaff;
+    color: #282c34;
+    border-radius: 5px;
+}
+
+.hasSet{
+    font-size: 22px;
+}
+
+.error{
+    color: red;
+    background-color: #282c34;
+    font-size: 30px;
+}
+
+.buttons-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid #00eaff;
+    border-radius: 5px;
+    margin: 10px 10px;
+    height: 32%;
+}
+
+button{
+    font-size: 44px;
+    border: none;
+    background-color: #00eaff;
+    color: #282c34;
+    border-radius: 15px;
+    height: 50px;
+}
+
+button:active{
+    background-color:#282c34;
+    color:  #00eaff;
+}
+
+button:disabled{
+    opacity: 0.2;
+}
+
+.red {
+    color: #ff0000
+}

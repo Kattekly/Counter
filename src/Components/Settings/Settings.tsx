@@ -1,5 +1,5 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
-import Button from "./Button";
+import React, {} from 'react';
+import Button from "../Button";
 import SettingsInputNumber from "./SettingsInput";
 
 type SettingsType = {
