@@ -10,7 +10,6 @@ const App = () => {
 
     const [startValue, setStartValue] = useState<number>(0)
     const [maxValue, setMaxValue] = useState<number>(1)
-
     const [counter, setCounter] = useState(startValue)
 
 

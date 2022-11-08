@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 
 type SettingsType = {
     maxValue: number
@@ -13,6 +13,7 @@ export const Settings = (props: SettingsType) => {
     const callBackMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
             props.setMaxValue(Number(e.currentTarget.value))
     }
+
 
    /* if (props.maxValue > (Number(e.currentTarget.value))) {
         props.setMaxValue(Number(e.currentTarget.value))
