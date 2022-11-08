@@ -1,44 +1,39 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
+import Button from "./Button";
+import SettingsInputNumber from "./SettingsInput";
 
 type SettingsType = {
     maxValue: number
     startValue: number
-    setStartValue: (value: number) => void
-    setMaxValue: (value: number) => void
+    isError: boolean
+    startValueCallback: (value: number) => void
+    maxValueCallback: (value: number) => void
+    setValuesCallback: () => void
 }
 
 
 export const Settings = (props: SettingsType) => {
 
-    const callBackMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
-            props.setMaxValue(Number(e.currentTarget.value))
+    const startValueHandler = (value: number) => {
+        props.startValueCallback(value)
+    }
+    const maxValueHandler = (value: number ) => {
+        props.maxValueCallback(value)
     }
 
-
-   /* if (props.maxValue > (Number(e.currentTarget.value))) {
-        props.setMaxValue(Number(e.currentTarget.value))
-    } else return ("Incorrect")*/
-
-    const callBackMinValue = (e: ChangeEvent<HTMLInputElement>) => {
-
-        props.setStartValue(Number(e.currentTarget.value))
-    }
-
-    const onClickSet = () => {
-       //set to LS
+    const setValuesHandler = () => {
+        props.setValuesCallback()
     }
 
     return (
-        <div>
-            <div>
-                <span>Max value:</span>
-                <input type={"number"} value={props.maxValue} onChange={callBackMaxValue}/>
+        <>
+            <div className='input-wrapper'>
+                <SettingsInputNumber error={props.isError} title={String(props.maxValue)} value={props.maxValue} callback={maxValueHandler}/>
+                <SettingsInputNumber error={props.isError} title={String(props.startValue)} value={props.startValue} callback={startValueHandler}/>
             </div>
-            <div>
-                <span>Start value:</span>
-                <input type={"number"} value={props.startValue} onChange={callBackMinValue}/>
+            <div className='set'>
+                <Button title='set' callback={setValuesHandler} disable={props.isError}/>
             </div>
-            {/*<button onClick={() => onClickSet}>Set</button>*/}
-        </div>
+        </>
     );
 };
