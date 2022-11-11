@@ -1,4 +1,4 @@
-import React, {} from 'react';
+import React, {KeyboardEvent} from 'react';
 import Button from "../Button";
 import SettingsInputNumber from "./SettingsInput";
 import './Settings.css'
@@ -25,6 +25,8 @@ export const Settings = (props: SettingsType) => {
     const setValuesHandler = () => {
         props.setValuesCallback()
     }
+
+
 
     return (
         <>

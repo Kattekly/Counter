@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from 'react';
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import './Settings.css'
 
 type InputNumberPropsType = {
@@ -18,7 +18,7 @@ const SettingsInputNumber = (props: InputNumberPropsType) => {
     return (
         <div className="settingsInput">
             <h4>{props.title}:</h4>
-            <input className={props.error ? 'red' : ''} type="number" value={props.value} onChange={callbackHandler} />
+            <input className={props.error ? 'red' : ''} type="number" value={props.value.toFixed()} onChange={callbackHandler}/>
         </div>
     );
 };
