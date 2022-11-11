@@ -10,15 +10,18 @@ type InputNumberPropsType = {
 
 const SettingsInputNumber = (props: InputNumberPropsType) => {
 
-    const callbackHandler = (e: ChangeEvent<HTMLInputElement> ) => {
-        props.callback(Number(e.target.value))
+    const callbackHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        props.callback(isNaN(e.currentTarget.valueAsNumber) ? 0 : Math.trunc(e.currentTarget.valueAsNumber))
+        //трунк - чтобы не происходило округления после запятой в большую сторону при вызове в инпуте toFixed()
+        //toFixed() - чтобы при вводе чисел зачищался начальный ноль
     }
 
 
     return (
         <div className="settingsInput">
             <h4>{props.title}:</h4>
-            <input className={props.error ? 'red' : ''} type="number" value={props.value.toFixed()} onChange={callbackHandler}/>
+            <input className={props.error ? 'red' : ''} type="number" value={props.value.toFixed()}
+                   onChange={callbackHandler}/>
         </div>
     );
 };
