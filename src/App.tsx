@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, {useState} from "react";
 import "./App.css";
 import {Counter} from "./Components/Counter/Counter";
 import {Settings} from "./Components/Settings/Settings";
@@ -8,14 +8,14 @@ export const START_SETTINGS_VALUE = getValueLocalStorage('START_VALUE', 0)
 export const MAX_SETTINGS_VALUE = getValueLocalStorage('MAX_VALUE', 5)
 
 
-function getValueLocalStorage(key:string, defaultValue:number){
+function getValueLocalStorage(key: string, defaultValue: number) {
     let value = defaultValue
     const valueStorage = localStorage.getItem(key)
-    if(valueStorage !== null) value = JSON.parse(valueStorage)
+    if (valueStorage !== null) value = JSON.parse(valueStorage)
     return value
 }
 
-function saveValuesCounter(key: string, value: number){
+function saveValuesCounter(key: string, value: number) {
     const localStorageValue = JSON.stringify(value)
     localStorage.setItem(key, localStorageValue)
 }
@@ -33,7 +33,7 @@ const App = () => {
     const isDisabledInc = (counter === maxValue)
 
     const handlerIncrementClick = () => {
-            setCounter(counter + STEP)
+        setCounter(counter + STEP)
     }
 
     const handlerResetClick = () => {
@@ -41,13 +41,13 @@ const App = () => {
     }
 
 
-    const maxValueCallback = (value:number) => {
+    const maxValueCallback = (value: number) => {
         setMaxValue(value)
         setIsError(value <= startValue)
         setSet(true)
     }
 
-    const startValueCallback = (value:number) => {
+    const startValueCallback = (value: number) => {
         setStartValue(value)
         setCounter(value)
         setIsError(value < 0 || value >= maxValue)
@@ -66,27 +66,27 @@ const App = () => {
     return (
         <div className="App">
             <div className="counterWrapper">
-        <div className="counter">
-            <Counter counter={counter}
-                     maxValue={maxValue}
-                     startValue={startValue}
-                     isError={isError}
-                     set={set}
-                     handlerIncrementClick={handlerIncrementClick}
-                     handlerResetClick={handlerResetClick}
-                     isDisabledReset={isDisabledReset}
-                     isDisabledInc={isDisabledInc}/>
-        </div>
-            <div className='settings'>
-            <Settings maxValue={maxValue}
-                      startValue={startValue}
-                      isError={isError}
-                      startValueCallback={startValueCallback}
-                      maxValueCallback={maxValueCallback}
-                      setValuesCallback={setValuesCallback}/>
+                <div className="counter">
+                    <Counter counter={counter}
+                             maxValue={maxValue}
+                             startValue={startValue}
+                             isError={isError}
+                             set={set}
+                             handlerIncrementClick={handlerIncrementClick}
+                             handlerResetClick={handlerResetClick}
+                             isDisabledReset={isDisabledReset}
+                             isDisabledInc={isDisabledInc}/>
+                </div>
+                <div className='settings'>
+                    <Settings maxValue={maxValue}
+                              startValue={startValue}
+                              isError={isError}
+                              startValueCallback={startValueCallback}
+                              maxValueCallback={maxValueCallback}
+                              setValuesCallback={setValuesCallback}/>
 
-        </div>
-        </div>
+                </div>
+            </div>
         </div>
     )
 }
