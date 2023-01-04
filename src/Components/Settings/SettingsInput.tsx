@@ -12,7 +12,7 @@ const SettingsInputNumber = (props: InputNumberPropsType) => {
 
     const callbackHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.callback(isNaN(e.currentTarget.valueAsNumber) ? 0 : Math.trunc(e.currentTarget.valueAsNumber))
-        //трунк - чтобы не происходило округления после запятой в большую сторону при вызове в инпуте toFixed()
+        //trunc - чтобы не происходило округления после запятой в большую сторону при вызове в инпуте toFixed()
         //toFixed() - чтобы при вводе чисел зачищался начальный ноль
     }
 
