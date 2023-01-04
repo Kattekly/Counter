@@ -18,7 +18,7 @@ export const Settings = (props: SettingsType) => {
     const startValueHandler = (value: number) => {
         props.startValueCallback(value)
     }
-    const maxValueHandler = (value: number ) => {
+    const maxValueHandler = (value: number) => {
         props.maxValueCallback(value)
     }
 
@@ -27,12 +27,13 @@ export const Settings = (props: SettingsType) => {
     }
 
 
-
     return (
         <>
             <div className="inputWrapper">
-                <SettingsInputNumber error={props.isError} title="Max value" value={props.maxValue} callback={maxValueHandler} />
-                <SettingsInputNumber error={props.isError} title="Start value" value={props.startValue} callback={startValueHandler}/>
+                <SettingsInputNumber error={props.isError} title="Max value" value={props.maxValue}
+                                     callback={maxValueHandler}/>
+                <SettingsInputNumber error={props.isError} title="Start value" value={props.startValue}
+                                     callback={startValueHandler}/>
             </div>
             <div className="set">
                 <Button title='Set' callback={setValuesHandler} disable={props.isError}/>
