@@ -17,8 +17,7 @@ type CounterType = {
 
 
 export const Counter = (props: CounterType) => {
-    const fullValueStyle = props.counter === props.maxValue ? 'red': ""
-
+    const fullValueStyle = props.counter === props.maxValue ? 'red' : ""
 
 
     const incorrectValue = props.startValue === props.maxValue || props.isError
