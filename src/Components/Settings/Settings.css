@@ -4,7 +4,7 @@
     margin: 5px;
 }
 
-.settingsInput{
+.settingsInput {
     position: relative;
     display: flex;
     justify-content: center;
@@ -22,12 +22,12 @@
     border-radius: 5px;
 }
 
-.set{
+.set {
     padding: 15px;
 }
 
 .settingsInput .red {
-    border: 2px solid  #d70a0a;
+    border: 2px solid #d70a0a;
     background-color: lightgray;
 
 }
