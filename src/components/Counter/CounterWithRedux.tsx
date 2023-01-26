@@ -3,7 +3,7 @@ import './Counter.css'
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../redux/stor";
 import {setCounterValueAC} from "../../redux/counter-reducer";
-import {UniversalButton} from "../Button";
+import {UniversalButton} from "../UniversalComponents/UniversalButton";
 
 export const Counter: React.FC = () => {
     const dispatch = useDispatch()

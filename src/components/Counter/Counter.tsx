@@ -1,7 +1,7 @@
 import React from 'react';
 import {MAX_SETTINGS_VALUE, START_SETTINGS_VALUE} from "../../App";
 import './Counter.css'
-import {UniversalButton} from "../Button";
+import {UniversalButton} from "../UniversalComponents/UniversalButton";
 
 
 type CounterType = {

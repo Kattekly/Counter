@@ -1,5 +1,5 @@
 import React, {KeyboardEvent} from 'react';
-import Button from "../Button";
+import Button from "../UniversalComponents/UniversalButton";
 import SettingsInputNumber from "./SettingsInput";
 import './Settings.css'
 
