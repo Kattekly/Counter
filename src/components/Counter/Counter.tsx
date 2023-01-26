@@ -1,8 +1,8 @@
 import React from 'react';
 import {MAX_SETTINGS_VALUE, START_SETTINGS_VALUE} from "../../App";
-
 import './Counter.css'
-import Button from "../Button";
+import {UniversalButton} from "../Button";
+
 
 type CounterType = {
     counter: number
@@ -32,12 +32,12 @@ export const Counter = (props: CounterType) => {
                     ? <h2 className="hasSet">Enter values and press 'set'</h2>
                     : <h2 className={fullValueStyle}>{props.counter}</h2>}
             <div className="buttonsWrapper">
-                <Button title='Inc'
+                <UniversalButton title='Inc'
                         callback={props.handlerIncrementClick}
-                        disable={props.isError ? props.isError : props.isDisabledInc}/>
-                <Button title='Reset'
+                        disabled={props.isError ? props.isError : props.isDisabledInc}/>
+                <UniversalButton title='Reset'
                         callback={props.handlerResetClick}
-                        disable={props.isError ? props.isDisabledReset : props.isDisabledReset}/>
+                        disabled={props.isError ? props.isDisabledReset : props.isDisabledReset}/>
             </div>
         </div>
 
