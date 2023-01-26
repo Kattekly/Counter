@@ -1,7 +1,7 @@
-import React, {KeyboardEvent} from 'react';
-import Button from "../UniversalComponents/UniversalButton";
+import React from 'react';
 import SettingsInputNumber from "./SettingsInput";
 import './Settings.css'
+import {UniversalButton} from "../UniversalComponents/UniversalButton";
 
 type SettingsType = {
     maxValue: number
@@ -36,7 +36,7 @@ export const Settings = (props: SettingsType) => {
                                      callback={startValueHandler}/>
             </div>
             <div className="set">
-                <Button title='Set' callback={setValuesHandler} disable={props.isError}/>
+                <UniversalButton title='Set' callback={setValuesHandler} disabled={props.isError}/>
             </div>
         </>
     );

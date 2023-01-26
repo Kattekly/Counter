@@ -8,7 +8,7 @@ type InputNumberPropsType = {
     callback: (value: number) => void
 }
 
-const SettingsInputNumber = (props: InputNumberPropsType) => {
+const SettingsInputNumber: React.FC<InputNumberPropsType> = (props) => {
 
     const callbackHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.callback(isNaN(e.currentTarget.valueAsNumber) ? 0 : Math.trunc(e.currentTarget.valueAsNumber))
