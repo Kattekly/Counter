@@ -3,13 +3,12 @@ import React from 'react';
 type buttonType = {
     title: string
     callback: () => void
-    disable: boolean
+    disabled: boolean
 }
 
-const Button = (props: buttonType) => {
+export const UniversalButton: React.FC<buttonType> = ({title,callback, disabled}) => {
+
     return (
-        <button disabled={props.disable} onClick={props.callback}>{props.title}</button>
+        <button disabled={disabled} onClick={callback}>{title}</button>
     );
 };
-
-export default Button;

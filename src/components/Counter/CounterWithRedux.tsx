@@ -3,6 +3,7 @@ import './Counter.css'
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../redux/stor";
 import {setCounterValueAC} from "../../redux/counter-reducer";
+import {UniversalButton} from "../Button";
 
 export const Counter: React.FC = () => {
     const dispatch = useDispatch()
@@ -39,11 +40,11 @@ export const Counter: React.FC = () => {
                 <UniversalButton
                     title='inc'
                     callback={setCounterCallback}
-                    buttonDisabled={hasErrorValue ? hasErrorValue : isDisabledInc}/>
+                    disabled={hasErrorValue ? hasErrorValue : isDisabledInc}/>
                 <UniversalButton
                     title='reset'
                     callback={resetCallback}
-                    buttonDisabled={hasErrorValue ? isDisabledReset : isDisabledReset}/>
+                    disabled={hasErrorValue ? isDisabledReset : isDisabledReset}/>
             </div>
         </div>
     );
