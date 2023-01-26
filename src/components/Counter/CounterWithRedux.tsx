@@ -5,6 +5,7 @@ import './Counter.css'
 import Button from "../Button";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../redux/stor";
+import {setCounterValueAC} from "../../redux/counter-reducer";
 
 type CounterType = {
     counter: number
@@ -21,6 +22,7 @@ type CounterType = {
 
 export const Counter = (props: CounterType) => {
     const dispatch = useDispatch()
+
     const counterValue = useSelector<AppRootStateType, number>(state => state.counter.counterValue)
     const startCounterValue = useSelector<AppRootStateType, number>(state => state.settings.startCounterValue)
     const maxCounterValue = useSelector<AppRootStateType, number>(state => state.settings.maxCounterValue)
@@ -29,31 +31,37 @@ export const Counter = (props: CounterType) => {
     const defaultStartValue = useSelector<AppRootStateType, number>(state => state.settings.defaultStartValue)
     const defaultMaxValue = useSelector<AppRootStateType, number>(state => state.settings.defaultMaxValue)
 
+    const isDisabledReset = counterValue <= startCounterValue || hasSetValue
+    const isDisabledInc = counterValue === maxCounterValue || hasSetValue
 
 
-    const fullValueStyle = props.counter === props.maxValue ? 'red' : ""
+    const setCounterCallback = () => {
+        dispatch(setCounterValueAC(counterValue + 1))
+    }
+    const resetCallback = () => dispatch(setCounterValueAC(startCounterValue))
 
-
-    const incorrectValue = props.startValue === props.maxValue || props.isError
-    const isDifferentValues = (props.startValue !== START_SETTINGS_VALUE || props.maxValue !== MAX_SETTINGS_VALUE) && props.set
+    const fullValueClass = counterValue === maxCounterValue ? 'red' : ''
+    const isDifferentValues = (startCounterValue !== defaultStartValue || maxCounterValue !== defaultMaxValue) && hasSetValue
+    const isIncorrectValue = startCounterValue === maxCounterValue || hasErrorValue
 
     return (
         <div className="buttons">
-            {incorrectValue
-                ? <h2 className="error">Incorrect value</h2>
+            {isIncorrectValue
+                ? <h2 className='error'>Incorrect value</h2>
                 : isDifferentValues
-                    ? <h2 className="hasSet">Enter values and press 'set'</h2>
-                    : <h2 className={fullValueStyle}>{props.counter}</h2>}
-            <div className="buttonsWrapper">
-                <Button title='Inc'
-                        callback={props.handlerIncrementClick}
-                        disable={props.isError ? props.isError : props.isDisabledInc}/>
-                <Button title='Reset'
-                        callback={props.handlerResetClick}
-                        disable={props.isError ? props.isDisabledReset : props.isDisabledReset}/>
+                    ? <h2 className='hasSet'>Enter values and press 'set'</h2>
+                    : <h2 className={fullValueClass}>{counterValue}</h2>}
+            <div className='buttons-wrapper'>
+                <UniversalButton
+                    title='inc'
+                    callback={setCounterCallback}
+                    buttonDisabled={hasErrorValue ? hasErrorValue : isDisabledInc}/>
+                <UniversalButton
+                    title='reset'
+                    callback={resetCallback}
+                    buttonDisabled={hasErrorValue ? isDisabledReset : isDisabledReset}/>
             </div>
         </div>
-
     );
 };
 
