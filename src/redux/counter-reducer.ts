@@ -9,7 +9,14 @@ const initialState: initialStateType = {
 
 
 export const counterReducer = (state: initialStateType = initialState, action: counterType) => {
-
+    switch (action.type) {
+        case "SET_COUNTER_VALUE": {
+            return {
+                ...state,
+                counterValue: action.payload
+            }
+        }
+    }
 }
 
 
