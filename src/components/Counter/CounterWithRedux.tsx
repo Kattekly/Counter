@@ -1,26 +1,10 @@
 import React from 'react';
-import {MAX_SETTINGS_VALUE, START_SETTINGS_VALUE} from "../../App";
-
 import './Counter.css'
-import Button from "../Button";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../redux/stor";
 import {setCounterValueAC} from "../../redux/counter-reducer";
 
-type CounterType = {
-    counter: number
-    maxValue: number
-    startValue: number
-    isError: boolean
-    set: boolean
-    handlerIncrementClick: () => void
-    handlerResetClick: () => void
-    isDisabledReset: boolean
-    isDisabledInc: boolean
-}
-
-
-export const Counter = (props: CounterType) => {
+export const Counter: React.FC = () => {
     const dispatch = useDispatch()
 
     const counterValue = useSelector<AppRootStateType, number>(state => state.counter.counterValue)
