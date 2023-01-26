@@ -27,8 +27,61 @@ const initialState: initialStateType = {
     incorrectValue: false
 }
 
-export const settingsReducer = () => {
+export const settingsReducer = (state: initialStateType = initialState, action: settingsType): initialStateType => {
+    switch (action.type) {
+        case SET_START_VALUE: {
+            return {
+                ...state,
+                startCounterValue: action.payload
+            }
+        }
 
+        case SET_MAX_VALUE: {
+            return {
+                ...state,
+                maxCounterValue: action.payload
+            }
+        }
+
+        case SET_MIN_VALUE: {
+            return {
+                ...state,
+                minCounterValue: action.payload
+            }
+        }
+
+        case SET_DEFAULT_MAX_VALUE: {
+            return {
+                ...state,
+                defaultMaxValue: action.payload
+            }
+        }
+
+        case SET_DEFAULT_START_VALUE: {
+            return {
+                ...state,
+                defaultStartValue: action.payload
+            }
+        }
+
+        case SET_ERROR: {
+            return {
+                ...state,
+                incorrectValue: action.payload
+            }
+        }
+
+        case SET_NEW_OPTIONS: {
+            return {
+                ...state,
+                savedNewOptions: action.payload
+            }
+        }
+
+        default: {
+            return state
+        }
+    }
 }
 
 export const setStartValueAC = (value: number) => {
@@ -80,7 +133,8 @@ export const setDefaultMaxValueAC = (value: number) => {
     } as const
 }
 
-type settingsType = ReturnType<typeof setStartValueAC>
+type settingsType =
+    | ReturnType<typeof setStartValueAC>
     | ReturnType<typeof setMaxValueAC>
     | ReturnType<typeof setMinValueAC>
     | ReturnType<typeof setNewOptionsAC>
