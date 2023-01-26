@@ -18,7 +18,7 @@ const SettingsInputNumber: React.FC<InputNumberPropsType> = (props) => {
 
 
     return (
-        <div className="settingsInput">
+        <div className="settings-input">
             <h4>{props.title}:</h4>
             <input className={props.error ? 'red' : ''} type="number" value={props.value.toFixed()}
                    onChange={callbackHandler}/>

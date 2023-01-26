@@ -11,11 +11,14 @@ const initialState: initialStateType = {
 
 export const counterReducer = (state: initialStateType = initialState, action: counterType): initialStateType => {
     switch (action.type) {
-        case "SET_COUNTER_VALUE": {
+        case "SET_COUNTER_VALUE":{
             return {
                 ...state,
                 counterValue: action.payload
             }
+        }
+        default: {
+            return state
         }
     }
 }
