@@ -3,7 +3,7 @@ import "./App.css";
 import {SettingsWithRedux} from "./components/Settings/SettingsWithRedux";
 import {CounterWithRedux} from "./components/Counter/CounterWithRedux";
 
-function App() {
+function AppWithRedux() {
     return (
         <div className="App">
             <div className="counter-wrapper">
@@ -18,4 +18,4 @@ function App() {
     );
 }
 
-export default App
+export default AppWithRedux
