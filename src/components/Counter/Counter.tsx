@@ -1,7 +1,8 @@
 import React from 'react';
 import {MAX_SETTINGS_VALUE, START_SETTINGS_VALUE} from "../../App";
-import Button from "../Button";
+
 import './Counter.css'
+import Button from "../Button";
 
 type CounterType = {
     counter: number

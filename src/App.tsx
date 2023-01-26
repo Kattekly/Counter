@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./App.css";
-import {Counter} from "./Components/Counter/Counter";
-import {Settings} from "./Components/Settings/Settings";
+import {Counter} from "./components/Counter/Counter";
+import {Settings} from "./components/Settings/Settings";
 
 const STEP = 1
 export const START_SETTINGS_VALUE = getValueLocalStorage('START_VALUE', 0)
