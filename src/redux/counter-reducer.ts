@@ -1,4 +1,5 @@
 export const SET_COUNTER_VALUE = 'SET_COUNTER_VALUE'
+
 type initialStateType = {
     counterValue: number
 }
