@@ -5,7 +5,7 @@ import {AppRootStateType} from "../../redux/stor";
 import {setCounterValueAC} from "../../redux/counter-reducer";
 import {UniversalButton} from "../UniversalComponents/UniversalButton";
 
-export const Counter: React.FC = () => {
+export const CounterWithRedux: React.FC = () => {
     const dispatch = useDispatch()
 
     const counterValue = useSelector<AppRootStateType, number>(state => state.counter.counterValue)

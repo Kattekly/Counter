@@ -16,7 +16,7 @@ import {setCounterValueAC} from "../../redux/counter-reducer";
 
 
 
-export const Settings: React.FC = () => {
+export const SettingsWithRedux: React.FC = () => {
     const dispatch = useDispatch()
 
     const startCounterValue = useSelector<AppRootStateType, number>(state => state.settings.startCounterValue)
