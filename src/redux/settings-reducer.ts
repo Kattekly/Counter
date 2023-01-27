@@ -6,18 +6,7 @@ export const SET_ERROR = 'SET_ERROR'
 export const SET_DEFAULT_START_VALUE = 'SET_DEFAULT_START_VALUE'
 export const SET_DEFAULT_MAX_VALUE = 'SET_MIN_VALUE'
 
-
-type initialStateType = {
-    defaultStartValue: number
-    defaultMaxValue: number
-    startCounterValue: number
-    maxCounterValue: number
-    minCounterValue: number
-    savedNewOptions: boolean
-    incorrectValue: boolean
-}
-
-const initialState: initialStateType = {
+const initialState = {
     defaultStartValue: 0,
     defaultMaxValue: 5,
     startCounterValue: 0,
@@ -26,6 +15,8 @@ const initialState: initialStateType = {
     savedNewOptions: true,
     incorrectValue: false
 }
+
+type initialStateType = typeof initialState
 
 export const settingsReducer = (state: initialStateType = initialState, action: settingsType): initialStateType => {
     switch (action.type) {

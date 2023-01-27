@@ -1,13 +1,10 @@
 export const SET_COUNTER_VALUE = 'SET_COUNTER_VALUE'
 
-type initialStateType = {
-    counterValue: number
-}
-
-const initialState: initialStateType = {
+const initialState = {
     counterValue: 0
 }
 
+type initialStateType = typeof initialState
 
 export const counterReducer = (state: initialStateType = initialState, action: counterType): initialStateType => {
     switch (action.type) {
