@@ -96,17 +96,17 @@ export const setMinValueAC = (value: number) => {
     } as const
 }
 
-export const setNewOptionsAC = (flag: boolean) => {
+export const setNewOptionsAC = (selected: boolean) => {
     return {
         type: SET_NEW_OPTIONS,
-        payload: flag
+        payload: selected
     } as const
 }
 
-export const setErrorIncorrectValueAC = (flag: boolean) => {
+export const setErrorIncorrectValueAC = (selected: boolean) => {
     return {
         type: SET_ERROR,
-        payload: flag
+        payload: selected
     } as const
 }
 
