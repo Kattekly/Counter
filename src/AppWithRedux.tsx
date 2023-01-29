@@ -8,10 +8,10 @@ function AppWithRedux() {
         <div className="App">
             <div className="counter-wrapper">
                 <div className='settings'>
-                    <SettingsWithRedux />
+                    <SettingsWithRedux/>
                 </div>
                 <div className='counter'>
-                    <CounterWithRedux />
+                    <CounterWithRedux/>
                 </div>
             </div>
         </div>
