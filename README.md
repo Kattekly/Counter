@@ -7,7 +7,7 @@ Counter application with Redux
 - [![React-router-dom][rrd]][rrd-url]
 - [![Redux][red]][red-url]
 - [![Typescript][typescript]][typescript-url]
-- [localStorage][localStorage]
+- [![localStorage][localStorage]][localStorage-url]
 
 <!-- LINKS  -->
 [react.js]: https://img.shields.io/badge/React-0769AD?style=for-the-badge&logo=react&logoColor=white
