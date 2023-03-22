@@ -19,3 +19,4 @@ Counter application with Redux
 [typescript]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
 [typescript-url]: https://www.typescriptlang.org/
 [localStorage]: https://img.shields.io/badge/localStorage-007ACC?style=for-the-badge&logo=SingleStore&logoColor=white
+[localStorage-url]: https://learn.javascript.ru/localstorage
